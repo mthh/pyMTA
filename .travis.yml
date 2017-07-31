@@ -26,5 +26,5 @@ addons:
       - libproj-dev
       - python-numpy
       - python3-numpy
-	  - python3-gdal
+      - python3-gdal
 after_success: coveralls
