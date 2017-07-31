@@ -8,18 +8,7 @@ sudo: required
 dist: trusty
 cache:
   directories:
-    - $GDALINST
     - ~/.cache/pip
-env:
-  global:
-    - GDALINST=$HOME/gdalinstall
-    - GDALBUILD=$HOME/gdalbuild
-before_install:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - ./misc/install_gdal.sh
-  - export PATH=$GDALINST/gdal-2.1.0/bin:$PATH
-  - export LD_LIBRARY_PATH=$GDALINST/gdal-2.1.0/lib:$LD_LIBRARY_PATH
 install:
   - pip install --upgrade setuptools pip coveralls
   - pip install -r requirements.txt
@@ -37,4 +26,5 @@ addons:
       - libproj-dev
       - python-numpy
       - python3-numpy
+	  - python3-gdal
 after_success: coveralls
