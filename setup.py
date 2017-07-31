@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from setuptools import setup, find_packages
+from setuptools import setup
 from ast import parse
 from os import path
 try:
@@ -24,17 +24,17 @@ setup(
     author="Matthieu Viry",
     author_email="matthieu.viry@cnrs.fr",
     packages=["mta"],
-    description="Multi-territorial analysis functionnalities",
+    description="Multi-territorial analysis functionalities",
     long_description=long_desc,
     url='http://github.com/mthh/pyMTA',
-    license="MIT",
+    license="GPLv3",
     test_suite="tests",
     install_requires=requirements,
     include_package_data=True,
     classifiers=[
         "Programming Language :: Python",
         "Development Status :: 4 - Beta",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.4",

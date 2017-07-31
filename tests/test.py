@@ -22,7 +22,6 @@ class TestMTA(unittest.TestCase):
             ].applymap(lambda x: float(x.replace(',','.')) if isinstance(x, str) else x)
 
     def verif_serie(self, s1, s2):
-        pass
         for i,j in zip(s1.values.tolist(), s2.values.tolist()):
             self.assertAlmostEqual(i, j, places=4)
 
