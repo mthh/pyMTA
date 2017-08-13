@@ -6,11 +6,13 @@
 import unittest
 import geopandas as gpd
 import pandas as pd
+import sys
 from mta import gdev, sdev, tdev
 
        
 class TestMTA(unittest.TestCase):
     def setUp(self):
+        self.precision = 4 if sys.version_info.major == 3 else 3
         self.data_verif = pd.read_csv('tests/result_R_MTA.csv', sep=";")
         self.gdf = gpd.read_file('tests/GrandParis.shp')
         data = pd.read_csv('tests/GrandParisData.csv', sep=";")
@@ -23,7 +25,7 @@ class TestMTA(unittest.TestCase):
 
     def verif_serie(self, s1, s2):
         for i,j in zip(s1.values.tolist(), s2.values.tolist()):
-            self.assertAlmostEqual(i, j, places=4)
+            self.assertAlmostEqual(i, j, places=self.precision)
 
     def test_global_dev(self):
         gdf = self.gdf
